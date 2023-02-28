@@ -1,0 +1,41 @@
+POST http://localhost:5053/recipes
+Content-Type: application/json
+
+{
+    "title": "pasta",
+    "description": "My first recipe!"
+}
+
+###
+
+POST http://localhost:5053/recipes
+Content-Type: application/json
+
+{
+    "title": "Pizza",
+    "ingredients": [
+        {"name": "Tomato", "unitOfMeasure": "g", "quantity": 103},
+        {"name": "Corn", "unitOfMeasure": "g", "quantity": 21}
+    ],
+    "description": "My first recipe!",
+    "imgUrl": "http://example.com/my-img.png"
+}
+
+###
+GET http://localhost:5053/recipes
+
+###
+GET http://localhost:5053/recipes?title=Piz&ingredientName=Corn
+
+###
+DELETE http://localhost:5053/recipes/1
+
+###
+PUT http://localhost:5053/recipes/1
+Content-Type: application/json
+
+{
+    "title": "Pasta",
+    "description": "An Italian recipe :)",
+    "imgUrl": "https://example.com/pizza.jpg"
+}
